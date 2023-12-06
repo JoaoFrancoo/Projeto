@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="carluselectum.css">
     <title>Carlus Electum</title>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
 <body>
     <header>
         <div class="capa_imagem">
-		<img src="imagens/capa.jpg" alt="capa do jogo"></div>
-	</header>
-    <div class="payday_container">
-<article>
-		
-		<div class="desc_jogo">
-            <div class="row">
-                <div class="coluna_1">
-			<h2>Payday 2</h2>
-			<p>A CRIMENET disponibiliza uma vasta gama de contratos dinâmicos, dando aos jogadores total liberdade para escolher 
-                desde pequenos ataques ou sequestros em lojas de conveniência até crimes cibernéticos de grande escala ou esvaziar
-                 grandes cofres bancários para um PAYDAY épico. Enquanto estiver em DC, por que não integrar-se à comunidade local e 
-                 realizar algumas tarefas políticas?</p>
-                </div>
-                <div class="coluna_2">
-                <img src="imagens/subcapa.webp" alt="">
-                </div>
-		</div>
+            <img src="imagens/capa.jpg" alt="capa do jogo">
         </div>
-
-		</div>
-    </article>
-</div>	
+    </header>
+    <div class="payday_container">
+        <article>
+            <div class="desc_jogo">
+                <div class="row">
+                    <div class="coluna_1">
+                        <h2>Payday 2</h2>
+                        <p>A CRIMENET disponibiliza uma vasta gama de contratos dinâmicos, dando aos jogadores total liberdade para escolher desde pequenos ataques ou sequestros em lojas de conveniência até crimes cibernéticos de grande escala ou esvaziar
+                            grandes cofres bancários para um PAYDAY épico. Enquanto estiver em DC, por que não integrar-se à comunidade local e 
+                            realizar algumas tarefas políticas?</p>
+                    </div>
+                    <div class="coluna_2">
+                        <div id="swiper_Trailers" class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="imagens/capa.jpg" alt="Screenshot 1" style="width: 100%;">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="imagens/subcapa.webp" alt="Screenshot 2" style="width: 100%;">
+                                </div>
+                            </div>
+                            <!-- Add pagination element here -->
+                            <div id="swiperPage_Trailers" class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+    <script>
+        var swiperTrailers = new Swiper('#swiper_Trailers', {
+            pagination: {
+                el: '#swiperPage_Trailers',
+                clickable: true,
+                renderBullet: function (index, className) {
+                    if (index === 0)
+                        return `<span class="fa-swiper ${className} fas mx-1 fa-xs fa-play"></span>`;
+                    else
+                        return `<span class="fa-swiper ${className} fas mx-1 fa-xs fa-circle"></span>`;
+                },
+            },
+            loop: true,
+            autoplay: {
+                delay: 3000, // milissegundos
+            },
+        });
+    </script>
 </body>
 </html>
