@@ -62,8 +62,8 @@ header {
     max-width: 66.666667%;
 }
 .payday_container{
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
     width: 100%;
     margin-top: -1rem;
     position: relative;
@@ -92,4 +92,54 @@ div{display: block;
     list-style: none;
     padding: 0;
     z-index: 1;
+}
+footer {
+    background-color: #333; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 20px 0; /* Espaçamento interno (topo e base) */
+  }
+  
+  .rodape-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .informacoes-contato,
+  .redes-sociais,
+  .informacoes-empresa {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  /* Estilo para os links no rodapé */
+  .redes-sociais a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .redes-sociais a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilo para a seção de direitos autorais */
+  .direitos-autorais {
+    margin-top: 20px;
+  }
+  
+  /* Estilo para a seção de direitos autorais em telas pequenas */
+  @media (max-width: 768px) {
+    .rodape-container {
+      flex-direction: column;
+    }
+    
+    .informacoes-contato,
+    .redes-sociais,
+    .informacoes-empresa {
+      flex: 1 1 100%;
+      margin-right: 0;
+    }
+  }
+  .h5, h5 {
+    font-size: 1.25rem;
+    color: yellow;
 }
