@@ -1,6 +1,10 @@
 # Projeto
  projeto de TI 
 
-O objetivo do website é mostrar às pessoas todos os jogos da starbreeze e as suas funcionalidades que os fizeram jogos únicos.
+<h1>Tema: Site de jogos </h1>
 
-O projeto está a ser desenvolvido por João Franco.
+
+<p>O objetivo do website é mostrar todas as funcionalidades, onde comprar, quem criou o jogo, etc.</p>
+<p>Basicamente, criar um site aprofundado sobre tudo o que há no Payday 2</p>
+
+<p>O projeto está a ser desenvolvido por João Franco.</p>
