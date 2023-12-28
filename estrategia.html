@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carluselectum.css">
+    <link rel="shortcut icon" href="imagens/logo.png">
+    <title>Carlus Electum</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Carlus Electum</a>
+            <a href="acao.html" > Ação</a>
+            <a href="estrategia.html" style="color:red">Estratégia</a>
+            <a href="rpg.html">RPG</a>
+            <a href="simulador.html">Simulador</a>
+            <a href="mmo.html">MMO</a>
+            <a href="anime.html">Anime</a>
+        </nav>
+    </header>
+    <main>
+        <section class="genre" id="action">
+            <h2>Jogos de Estratégia</h2>
+            <section id="jogo" class="pagination-page">
+                <div class="game" data-nome="Frostpunk">
+                    <img src="imagens/estrategia/frostpunk.jpg" alt="Frostpunk" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Sid Meier’s Civilization® VI">
+                    <img src="imagens/estrategia/civilization 6.jpg" alt="Sid Meier’s Civilization® VI" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Galatic civilization IV">
+                    <img src="imagens/estrategia/galatic civilizations 4.jpg" alt="Galatic civilization IV" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Hearts of Iron IV">
+                    <img src="imagens/estrategia/HOI 4.jpg" alt="Hearts of Iron IV" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Jurassic world evolution 2">
+                    <img src="imagens/estrategia/jurassic world evolution 2.jpg" alt="Jurassic world evolution 2" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Tropico 6">
+                    <img src="imagens/estrategia/tropico 6.jpg" alt="Tropico 6" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Total War: WARHAMMER III">
+                    <img src="imagens/estrategia/TWWH 3.jpg" alt="Total War: WARHAMMER III" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Rimworld">
+                    <img src="imagens/estrategia/rimworld.jpg" alt="Rimworld" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Slay the Spire">
+                    <img src="imagens/estrategia/slay the spire.jpg" alt="Slay the Spire" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Techtonica">
+                    <img src="imagens/estrategia/techtonica.jpg" alt="Techtonica" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Age of Empires II: Definitive Edition">
+                    <img src="imagens/estrategia/age of empires.jpg" alt="Age of Empires II: Definitive Edition" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Europa Universalis IV">
+                    <img src="imagens/estrategia/europa universalis IV.jpg" alt="Europa Universalis IV" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+            </section>
+        </section>
+        <nav class="pagination">
+            <a href="#" class="page-link active" onclick="showPage(1)">1</a>
+            <a href="#" class="page-link" onclick="showPage(2)">2</a>
+        </nav>
+    </main>
+    <footer>
+        <footer>
+            <p>&copy; 2023 Carlus Electum. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="https://twitter.com/ItsMuxyre" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    </footer>
+    <script>
+          function mostrarNomeJogo(elemento) {
+        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
+        alert("Nome do Jogo: " + nomeJogo);
+    }
+
+    function animacaoMouseOver(elemento) {
+        elemento.style.transform = 'scale(1.1)';
+    }
+
+    function animacaoMouseOut(elemento) {
+        elemento.style.transform = 'scale(1)';
+    }
+        function showPage(pageNumber) {
+            var games = document.querySelectorAll('.pagination-page .game');
+            games.forEach(function(game) {
+                game.style.display = 'none';
+            });
+            var startIndex = (pageNumber - 1) * 6;
+            for (var i = 0; i < 6 && startIndex + i < games.length; i++) {
+                games[startIndex + i].style.display = 'flex'; 
+            }
+
+            // Atualiza a classe 'active' para a página atual
+            var pageLinks = document.querySelectorAll('.page-link');
+            pageLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            pageLinks[pageNumber - 1].classList.add('active');
+        }
+        showPage(1);
+    </script>
+</body>
+</html>

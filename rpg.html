@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carluselectum.css">
+    <link rel="shortcut icon" href="imagens/logo.png">
+    <title>Carlus Electum</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Carlus Electum</a>
+            <a href="acao.html">Ação</a>
+            <a href="estrategia.html">Estratégia</a>
+            <a href="rpg.html" style="color:red">RPG</a>
+            <a href="simulador.html">Simulador</a>
+            <a href="mmo.html">MMO</a>
+            <a href="anime.html">Anime</a>
+        </nav>
+    </header>
+    <main>
+        <section class="genre" id="action">
+            <h2>Jogos de RPG</h2>
+            <section id="jogo" class="pagination-page">
+                <div class="game" data-nome="Fallout 76">
+                    <img src="imagens/rpg/fallout 76.jpg" alt="Fallout 76" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Gunfire Reborn">
+                    <img src="imagens/rpg/gunfire.jpg" alt="Gunfire Reborn" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Lies of P">
+                    <img src="imagens/rpg/Lies of P.jpg" alt="Lies of P" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Necesse">
+                    <img src="imagens/rpg/necesse.jpg" alt="Necesse" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Dave the diver">
+                    <img src="imagens/rpg/dave the diver.jpg" alt="Dave the diver" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Persona 5 Royal">
+                    <img src="imagens/rpg/P5 royal.jpg" alt="Persona 5 Royal" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Project Zomboid">
+                    <img src="imagens/rpg/project zomboid.jpg" alt="Project Zomboid" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="stardew valley">
+                    <img src="imagens/rpg/stardew valley.jpg" alt="stardew valley" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Valheim">
+                    <img src="imagens/rpg/valheim.jpg" alt="Valheim" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Starfield">
+                    <img src="imagens/rpg/starfield.jpg" alt="Starfield" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Assassin's Creed Valhalla">
+                    <img src="imagens/rpg/assassins scred valhalla.jpg" alt="Assassin's Creed Valhalla" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="The Witcher 3">
+                    <img src="imagens/rpg/the witcher 3.jpg" alt="The Witcher 3" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+            </section>
+        </section>
+        <nav class="pagination">
+            <a href="#" class="page-link active" onclick="showPage(1)">1</a>
+            <a href="#" class="page-link" onclick="showPage(2)">2</a>
+        </nav>
+    </main>
+    <footer>
+        <footer>
+            <p>&copy; 2023 Carlus Electum. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="https://twitter.com/ItsMuxyre" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    </footer>
+    <script>
+          function mostrarNomeJogo(elemento) {
+        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
+        alert("Nome do Jogo: " + nomeJogo);
+    }
+
+    function animacaoMouseOver(elemento) {
+        elemento.style.transform = 'scale(1.1)';
+    }
+
+    function animacaoMouseOut(elemento) {
+        elemento.style.transform = 'scale(1)';
+    }
+        function showPage(pageNumber) {
+            var games = document.querySelectorAll('.pagination-page .game');
+            games.forEach(function(game) {
+                game.style.display = 'none';
+            });
+            var startIndex = (pageNumber - 1) * 6;
+            for (var i = 0; i < 6 && startIndex + i < games.length; i++) {
+                games[startIndex + i].style.display = 'flex'; 
+            }
+
+            // Atualiza a classe 'active' para a página atual
+            var pageLinks = document.querySelectorAll('.page-link');
+            pageLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            pageLinks[pageNumber - 1].classList.add('active');
+        }
+        showPage(1);
+    </script>
+</body>
+</html>

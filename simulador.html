@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="carluselectum.css">
+    <link rel="shortcut icon" href="imagens/logo.png">
+    <title>Carlus Electum</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Carlus Electum</a>
+            <a href="acao.html">Ação</a>
+            <a href="estrategia.html">Estratégia</a>
+            <a href="rpg.html">RPG</a>
+            <a href="simulador.html" style="color:red">Simulador</a>
+            <a href="mmo.html">MMO</a>
+            <a href="anime.html">Anime</a>
+        </nav>
+    </header>
+    <main>
+        <section class="genre" id="action">
+            <h2>Jogos de ação</h2>
+            <section id="jogo" class="pagination-page">
+                <div class="game" data-nome="Payday 3">
+                    <img src="imagens/acao/payday 3.jpg" alt="payday 3" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Elden ring">
+                    <img src="imagens/acao/elden ring.jpg" alt="elden ring" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Ark survival ascended">
+                    <img src="imagens/acao/ark.jpg" alt="Ark survival ascedant" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Cyberpunk">
+                    <img src="imagens/acao/cyberpunk.jpg" alt="Cyberpunk" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Dead Cells">
+                    <img src="imagens/acao/dead cells.jpg" alt="Dead cells" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Monster hunter world">
+                    <img src="imagens/acao/MH world.jpg" alt="Monster hunter world" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="lethal company">
+                    <img src="imagens/acao/lethal company.jpg" alt="lethal company" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Plants vs Zombies: battle for neighborville">
+                    <img src="imagens/acao/pvz.jpg" alt="Plants vs Zombies: battle for neighborville" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>   
+                <div class="game" data-nome="Ready or not">
+                    <img src="imagens/acao/ron.jpg" alt="Ready or not" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Star wars: jedi survivor">
+                    <img src="imagens/acao/jedi survivor.jpg" alt="Star wars: jedi survivor" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Resident Evil 4">
+                    <img src="imagens/acao/RE4.jpg" alt="Resident Evil 4" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+                <div class="game" data-nome="Rust">
+                    <img src="imagens/acao/rust.jpg" alt="Rust" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
+                </div>
+            </section>
+        </section>
+        <nav class="pagination">
+            <a href="#" class="page-link active" onclick="showPage(1)">1</a>
+            <a href="#" class="page-link" onclick="showPage(2)">2</a>
+        </nav>
+    </main>
+    <footer>
+        <footer>
+            <p>&copy; 2023 Carlus Electum. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" target="_blank">Facebook</a>
+                <a href="https://twitter.com/ItsMuxyre" target="_blank">Twitter</a>
+                <a href="#" target="_blank">Instagram</a>
+            </div>
+        </footer>
+    </footer>
+    <script>
+          function mostrarNomeJogo(elemento) {
+        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
+        alert("Nome do Jogo: " + nomeJogo);
+    }
+
+    function animacaoMouseOver(elemento) {
+        elemento.style.transform = 'scale(1.1)';
+    }
+
+    function animacaoMouseOut(elemento) {
+        elemento.style.transform = 'scale(1)';
+    }
+        function showPage(pageNumber) {
+            var games = document.querySelectorAll('.pagination-page .game');
+            games.forEach(function(game) {
+                game.style.display = 'none';
+            });
+            var startIndex = (pageNumber - 1) * 6;
+            for (var i = 0; i < 6 && startIndex + i < games.length; i++) {
+                games[startIndex + i].style.display = 'flex'; 
+            }
+
+            // Atualiza a classe 'active' para a página atual
+            var pageLinks = document.querySelectorAll('.page-link');
+            pageLinks.forEach(function(link) {
+                link.classList.remove('active');
+            });
+            pageLinks[pageNumber - 1].classList.add('active');
+        }
+        showPage(1);
+    </script>
+</body>
+</html>
