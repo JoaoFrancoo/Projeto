@@ -9,4 +9,4 @@
 
 <p>O projeto está a ser desenvolvido por João Franco.</p>
 
- <img src="imagens/frame.png"  style="width: 30%;">
+ <img src="frame.png"  style="width: 30%;">
