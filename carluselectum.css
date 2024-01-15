@@ -30,9 +30,10 @@ nav a {
 }
 
 main {
+  max-width: 100%;
   padding: 20px;
+  margin-bottom: 50px;
 }
-
 section.genre {
   margin-bottom: 20px;
 }
@@ -143,80 +144,4 @@ h3 {
 
 .game-img:hover {
   transform: scale(1.1);
-}
-
-footer {
-  background-color: #171a21;
-  color: #fff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-}
-footer a {
-  color: #3498db;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-
-footer .social-icons a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #fff;
-}
-@media screen and (min-width: 769px) {
-  footer {
-    position: absolute;
-    bottom: 0;
-  }
-}
-
-
-@media screen and (max-width: 768px) {
-  article.jogos {
-    width: 100%;
-  }
-
-  .pagination-page .game {
-    width: 100%;
-  }
-
-  footer {
-      position: relative;
-      margin-top: 0;
-  }
-
-  footer .social-icons {
-    margin-top: 10px; 
-  }
-
-  footer .social-icons a {
-    margin: 0 10px;
-    color: #fff;
-    transition: transform 0.3s ease-in-out; 
-  }
-
-  footer .social-icons a:hover {
-    transform: scale(1.1); 
-  }
-}
-a:hover {
-  color: red;
-}
-
-
-a, button {
-  transition: color 0.3s ease-in-out;
-}
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  
-  min-height: calc(100vh - 40px);
 }

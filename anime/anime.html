@@ -23,40 +23,40 @@
         <section class="genre" id="action">
             <h2>Jogos de anime</h2>
             <section id="jogo" class="pagination-page">
-                <div class="game" data-nome="Attack on Titan 2 - A.O.T.2" >
+                <div class="game" data-nome="aot2" >
                     <img src="imagens/AOT 2.jpg" alt="Attack on Titan 2 - A.O.T.2" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles">
+                <div class="game" data-nome="DemonSlayer">
                     <img src="imagens/Demon Slayer.jpg" alt="Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
-                <div class="game" data-nome="DRAGON BALL Z: KAKAROT">
+                <div class="game" data-nome="dbZ">
                     <img src="imagens/Dragon ball Z.jpg" alt="DRAGON BALL Z: KAKAROT" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="FINAL FANTASY XV WINDOWS EDITION">
+                <div class="game" data-nome="ff15">
                     <img src="imagens/FF XV.jpg" alt="FINAL FANTASY XV WINDOWS EDITION" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="GUILTY GEAR -STRIVE-">
+                <div class="game" data-nome="ggs">
                     <img src="imagens/Guilty Gear.jpg" alt="GUILTY GEAR -STRIVE-" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="NieR:Automata™">
+                <div class="game" data-nome="NieRAutomata">
                     <img src="imagens/Nier Automata.jpg" alt="NieR:Automata™" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="NieR Replicant™">
+                <div class="game" data-nome="NieRReplicant">
                     <img src="imagens/nier replicant.jpg" alt="NieR Replicant™" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="OCTOPATH TRAVELER II">
+                <div class="game" data-nome="OctopahTraveler">
                     <img src="imagens/Octopath traveler 2.jpg" alt="OCTOPATH TRAVELER II" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
-                <div class="game" data-nome="ONE PIECE: PIRATE WARRIORS 4">
+                <div class="game" data-nome="Onepiece">
                     <img src="imagens/One Piece.jpg" alt="ONE PIECE: PIRATE WARRIORS 4" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Hatsune Miku: Project DIVA Mega Mix+">
+                <div class="game" data-nome="HatsuneMiku">
                     <img src="imagens/Project DIVA.jpg" alt="Hatsune Miku: Project DIVA Mega Mix+" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Tales of Arise">
+                <div class="game" data-nome="TalesofArise">
                     <img src="imagens/Tales of Arise.jpg" alt="Tales of Arise" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Tekken 7">
+                <div class="game" data-nome="Tekken7">
                     <img src="imagens/Tekken 7.jpg" alt="Tekken 7" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
             </section>
@@ -66,22 +66,8 @@
             <a href="#" class="page-link" onclick="showPage(2)">2</a>
         </nav>
     </main>
-    <footer>
-        <footer>
-            <p>&copy; 2023 Carlus Electum. Todos os direitos reservados.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/ArrozEstudios/?locale=pt_BR" target="_blank">Facebook</a>
-                <a href="https://twitter.com/ItsMuxyre" target="_blank">Twitter</a>
-                <a href="https://www.instagram.com/itsmuxyre/" target="_blank">Instagram</a>
-            </div>
-        </footer>
-    </footer>
-    <script>
-          function mostrarNomeJogo(elemento) {
-        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
-        alert("Nome do Jogo: " + nomeJogo);
-    }
-
+</body>
+<script>
     function animacaoMouseOver(elemento) {
         elemento.style.transform = 'scale(1.1)';
     }
@@ -106,7 +92,12 @@
             });
             pageLinks[pageNumber - 1].classList.add('active');
         }
+        function mostrarNomeJogo(elemento) {
+            // Obtém o valor do atributo 'data-nome'
+            var nomeDoJogo = elemento.parentNode.getAttribute('data-nome');
+
+            // Redireciona para a página do jogo com base no nome
+            window.location.href = nomeDoJogo.toLowerCase().replace(/\s/g, '-') + ".html";}
         showPage(1);
     </script>
-</body>
 </html>

@@ -31,6 +31,7 @@ nav a {
 main {
     max-width: 100%;
     padding: 20px;
+    clear: both; 
 }
 
 img {
@@ -112,16 +113,6 @@ img {
     background-color: #1f1f1f;
     color: #3498db;
 }
-.footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
 footer {
     background-color: #171a21;
     color: #fff;
@@ -129,9 +120,11 @@ footer {
     padding-bottom: 20px;
     text-align: center;
     width: 100%;
-    position: fixed;
+    position: relative;
     bottom: 0;
+    clear: both;
 }
+
 
 footer a {
     color: #3498db;
@@ -151,9 +144,16 @@ footer .social-icons a {
 
 @media screen and (min-width: 769px) {
     footer {
-        position: absolute;
-        bottom: 0;
-    }
+            background-color: #171a21;
+            color: #fff;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            text-align: center;
+            width: 100%;
+            position: relative;
+            bottom: 0;
+            clear: both; /* Adicione esta propriedade para limpar flutuações */
+        }
 }
 
 @media screen and (max-width: 768px) {
