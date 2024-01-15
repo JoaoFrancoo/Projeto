@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jogospecs.css">
+    <link rel="stylesheet" href="../modal.css">
+    <link rel="shortcut icon" href="../logo.png">
+    <title>Assassin's Creed Valhalla</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" style="color:red">Carlus Electum</a>
+            <a href="../acao/acao.html">Ação</a>
+            <a href="../estrategia/estrategia.html">Estratégia</a>
+            <a href="../rpg/rpg.html">RPG</a>
+            <a href="../simulador/simulador.html">Simulador</a>
+            <a href="../mmo/mmo.html">MMO</a>
+            <a href="../anime/anime.html">Anime</a>
+        </nav>
+    </header>
+    <main>
+        <section class="game-info">
+            <div>
+                <h2><i>Assassin's Creed Valhalla</i></h2><br>
+                <img src="imagens/assassins scred valhalla.jpg" alt="Assassin's Creed Valhalla">
+            </div>
+            <p>        
+                Assassin's Creed Valhalla é um jogo de ação e aventura desenvolvido pela Ubisoft Montreal e publicado pela Ubisoft. Lançado em 2020, o jogo faz parte da 
+                franquia Assassin's Creed e permite aos jogadores assumirem o papel de Eivor, um guerreiro viking, enquanto exploram a Inglaterra durante a Idade Média.
+            </p>
+            <div class="specs-container">
+                <div class="specs-table">
+                    <h3>Requisitos Mínimos</h3>
+                    <table>
+                        <tr>
+                            <th>SO</th>
+                            <td>Windows 7 or later</td>
+                        </tr>
+                        <tr>
+                            <th>Processador</th>
+                            <td>Intel Core i5 4460 or AMD Ryzen 3 1200</td>
+                        </tr>
+                        <tr>
+                            <th>Memória</th>
+                            <td>8 GB RAM</td>
+                        </tr>
+                        <tr>
+                            <th>Placa de vídeo</th>
+                            <td>NVIDIA GeForce GTX 960 or AMD Radeon R9 380</td>
+                        </tr>
+                        <tr>
+                            <th>Armazenamento</th>
+                            <td>50 GB disponíveis</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="specs-table">
+                    <h3>Requisitos Recomendados</h3>
+                    <table>
+                        <tr>
+                            <th>Sistema Operativo</th>
+                            <td>Windows 10</td>
+                        </tr>
+                        <tr>
+                            <th>Processador</th>
+                            <td>Intel Core i7 6700K or AMD Ryzen 7 1700</td>
+                        </tr>
+                        <tr>
+                            <th>Memória</th>
+                            <td>16 GB RAM</td>
+                        </tr>
+                        <tr>
+                            <th>Placa de vídeo</th>
+                            <td>NVIDIA GeForce GTX 1080 or AMD Radeon RX Vega 64</td>
+                        </tr>
+                        <tr>
+                            <th>Armazenamento</th>
+                            <td>50 GB disponíveis</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="purchase-container">
+                <button onclick="openPurchaseModal()">Compre Agora</button>
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePurchaseModal()">&times;</span>
+            <p>Escolha onde comprar:</p>
+            <button onclick="openLink('https://store.steampowered.com/app/2208920/Assassins_Creed_Valhalla/')">Steam</button>
+        </div>
+    </div>
+    <script>
+        function openPurchaseModal() {
+            var modal = document.getElementById("purchaseModal");
+            modal.style.display = "block";
+        }
+
+        function closePurchaseModal() {
+            var modal = document.getElementById("purchaseModal");
+            modal.style.display = "none";
+        }
+
+        function openLink(link) {
+            window.open(link, "_blank");
+            closePurchaseModal();
+        }
+
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            var modal = document.getElementById("purchaseModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
