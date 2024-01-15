@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../jogospecs.css">
+    <link rel="stylesheet" href="../modal.css">
+    <link rel="shortcut icon" href="../logo.png">
+    <title>Cyberpunk 2077</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="../index.html" class="logo" style="color:red">Carlus Electum</a>
+            <a href="../acao/acao.html">Ação</a>
+            <a href="../estrategia/estrategia.html">Estratégia</a>
+            <a href="../rpg/rpg.html">RPG</a>
+            <a href="../simulador/simulador.html">Simulador</a>
+            <a href="../mmo/mmo.html">MMO</a>
+            <a href="../anime/anime.html">Anime</a>
+        </nav>
+    </header>
+    <main>
+        <section class="game-info">
+            <div>
+                <h2><i>Cyberpunk 2077</i></h2><br>
+                <img src="imagens/cyberpunk.jpg" alt="Cyberpunk 2077">
+            </div>
+            <p>        
+                Cyberpunk 2077 é um jogo de RPG de ação desenvolvido pela CD Projekt. Ambientado em Night City, um mundo aberto futurista, os jogadores assumem o
+                papel de V, um mercenário em busca de um implante que concede imortalidade. Com escolhas significativas, narrativa envolvente e um vasto ambiente
+                urbano, Cyberpunk 2077 promete uma experiência única e imersiva.
+            </p>
+            <div class="specs-container">
+                <div class="specs-table">
+                    <h3>Requisitos Mínimos</h3>
+                    <table>
+                        <tr>
+                            <th>SO</th>
+                            <td>Windows 7 (64-bit)</td>
+                        </tr>
+                        <tr>
+                            <th>Processador</th>
+                            <td>Intel Core i5-3570K / AMD FX-8310</td>
+                        </tr>
+                        <tr>
+                            <th>Memória</th>
+                            <td>8 GB RAM</td>
+                        </tr>
+                        <tr>
+                            <th>Placa de vídeo</th>
+                            <td>NVIDIA GTX 780 3GB / AMD Radeon RX 470</td>
+                        </tr>
+                        <tr>
+                            <th>Armazenamento</th>
+                            <td>70 GB disponíveis</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="specs-table">
+                    <h3>Requisitos Recomendados</h3>
+                    <table>
+                        <tr>
+                            <th>Sistema Operativo</th>
+                            <td>Windows 10 (64-bit)</td>
+                        </tr>
+                        <tr>
+                            <th>Processador</th>
+                            <td>Intel Core i7-4790 / AMD Ryzen 3 3200G</td>
+                        </tr>
+                        <tr>
+                            <th>Memória</th>
+                            <td>12 GB RAM</td>
+                        </tr>
+                        <tr>
+                            <th>Placa de vídeo</th>
+                            <td>NVIDIA GTX 1060 6GB / AMD Radeon R9 Fury</td>
+                        </tr>
+                        <tr>
+                            <th>Armazenamento</th>
+                            <td>70 GB disponíveis</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="purchase-container">
+                <button onclick="openPurchaseModal()">Compra Agora</button>
+            </div>
+        </section>
+    </main>
+    <div class="modal" id="purchaseModal">
+        <div class="modal-content">
+            <span class="close" onclick="closePurchaseModal()">&times;</span>
+            <p>Escolha onde comprar:</p>
+            <button onclick="openLink('https://store.steampowered.com/app/1091500/Cyberpunk_2077/')">Steam</button>
+        </div>
+    </div>
+    <script>
+        function openPurchaseModal() {
+            var modal = document.getElementById("purchaseModal");
+            modal.style.display = "block";
+        }
+
+        function closePurchaseModal() {
+            var modal = document.getElementById("purchaseModal");
+            modal.style.display = "none";
+        }
+
+        function openLink(link) {
+            window.open(link, "_blank");
+            closePurchaseModal();
+        }
+
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            var modal = document.getElementById("purchaseModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

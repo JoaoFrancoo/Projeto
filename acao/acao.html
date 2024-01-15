@@ -11,49 +11,49 @@
     <header>
         <nav>
             <a href="../index.html">Carlus Electum</a>
-            <a href="acao.html" style="color:red"> Ação</a>
-            <a href="estrategia.html">Estratégia</a>
-            <a href="rpg.html">RPG</a>
-            <a href="simulador.html">Simulador</a>
-            <a href="mmo.html">MMO</a>
-            <a href="anime.html">Anime</a>
+            <a href="../acao/acao.html" style="color:red"> Ação</a>
+            <a href="../estrategia/estrategia.html">Estratégia</a>
+            <a href="../rpg/rpg.html">RPG</a>
+            <a href="../simulador/simulador.html">Simulador</a>
+            <a href="../mmo/mmo.html">MMO</a>
+            <a href="../anime/anime.html">Anime</a>
         </nav>
     </header>
     <main>
         <section class="genre" id="action">
             <h2>Jogos de ação</h2>
             <section id="jogo" class="pagination-page">
-                <div class="game" data-nome="Payday 3">
+                <div class="game" data-nome="Payday3">
                     <img src="imagens/payday 3.jpg" alt="payday 3" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Elden ring">
+                <div class="game" data-nome="Eldenring">
                     <img src="imagens/elden ring.jpg" alt="elden ring" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
-                <div class="game" data-nome="Ark survival ascended">
+                <div class="game" data-nome="Ark">
                     <img src="imagens/ark.jpg" alt="Ark survival ascedant" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
                 <div class="game" data-nome="Cyberpunk">
                     <img src="imagens/cyberpunk.jpg" alt="Cyberpunk" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Dead Cells">
+                <div class="game" data-nome="DeadCells">
                     <img src="imagens/dead cells.jpg" alt="Dead cells" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Monster hunter world">
+                <div class="game" data-nome="Monsterhunter">
                     <img src="imagens/MH world.jpg" alt="Monster hunter world" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="lethal company">
+                <div class="game" data-nome="lethalcompany">
                     <img src="imagens/lethal company.jpg" alt="lethal company" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Plants vs Zombies: battle for neighborville">
+                <div class="game" data-nome="Pvz">
                     <img src="imagens/pvz.jpg" alt="Plants vs Zombies: battle for neighborville" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
-                <div class="game" data-nome="Ready or not">
+                <div class="game" data-nome="Readyornot">
                     <img src="imagens/ron.jpg" alt="Ready or not" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Star wars: jedi survivor">
+                <div class="game" data-nome="Starwars">
                     <img src="imagens/jedi survivor.jpg" alt="Star wars: jedi survivor" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Resident Evil 4">
+                <div class="game" data-nome="ResidentEvil4">
                     <img src="imagens/RE4.jpg" alt="Resident Evil 4" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
                 <div class="game" data-nome="Rust">
@@ -67,12 +67,7 @@
         </nav>
     </main>
     <script>
-          function mostrarNomeJogo(elemento) {
-        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
-        alert("Nome do Jogo: " + nomeJogo);
-    }
-
-    function animacaoMouseOver(elemento) {
+      function animacaoMouseOver(elemento) {
         elemento.style.transform = 'scale(1.1)';
     }
 
@@ -96,6 +91,12 @@
             });
             pageLinks[pageNumber - 1].classList.add('active');
         }
+        function mostrarNomeJogo(elemento) {
+            // Obtém o valor do atributo 'data-nome'
+            var nomeDoJogo = elemento.parentNode.getAttribute('data-nome');
+
+            // Redireciona para a página do jogo com base no nome
+            window.location.href = nomeDoJogo.toLowerCase().replace(/\s/g, '-') + ".html";}
         showPage(1);
     </script>
 </body>

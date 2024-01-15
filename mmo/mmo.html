@@ -10,13 +10,13 @@
 <body>
     <header>
         <nav>
-            <a href="index.html">Carlus Electum</a>
-            <a href="acao.html">Ação</a>
-            <a href="estrategia.html">Estratégia</a>
-            <a href="rpg.html">RPG</a>
-            <a href="simulador.html" >Simulador</a>
-            <a href="mmo.html" style="color:red">MMO</a>
-            <a href="anime.html">Anime</a>
+            <a href="../index.html">Carlus Electum</a>
+            <a href="../acao/acao.html" > Ação</a>
+            <a href="../estrategia/estrategia.html">Estratégia</a>
+            <a href="../rpg/rpg.html">RPG</a>
+            <a href="../simulador/simulador.html">Simulador</a>
+            <a href="../mmo/mmo.html" style="color:red">MMO</a>
+            <a href="../anime/anime.html">Anime</a>
         </nav>
     </header>
     <main>
@@ -26,37 +26,37 @@
                 <div class="game" data-nome="Atlas" >
                     <img src="imagens/atlas.jpg" alt="Atlas" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="BattleBit Remastered">
+                <div class="game" data-nome="BattleBit">
                     <img src="imagens/Battle Bit.jpg" alt="BattleBit Remastered" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
                 <div class="game" data-nome="Foxhole">
                     <img src="imagens/Foxhole.jpg" alt="Foxhole" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Heliborne Collection">
+                <div class="game" data-nome="Heliborne">
                     <img src="imagens/heliborne.jpg" alt="Heliborne Collection" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Nevergrind Online">
+                <div class="game" data-nome="Nevergrind">
                     <img src="imagens/nevergrind.jpg" alt="Nevergrind Online" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Project: Gorgon">
+                <div class="game" data-nome="ProjectGorgon">
                     <img src="imagens/project gordon.jpg" alt="Project: Gorgon" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
                 <div class="game" data-nome="SCUM">
                     <img src="imagens/scum.jpg" alt="SCUM" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Stars End">
+                <div class="game" data-nome="StarsEnd">
                     <img src="imagens/stars end.jpg" alt="Stars End" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>   
                 <div class="game" data-nome="Temtem">
                     <img src="imagens/temtem.jpg" alt="Temtem" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="The Elder Scrolls® Online">
+                <div class="game" data-nome="TesOnline">
                     <img src="imagens/TES online.jpg" alt="The Elder Scrolls® Online" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="The Isle">
+                <div class="game" data-nome="TheIsle">
                     <img src="imagens/the isle.jpg" alt="The Isle" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
-                <div class="game" data-nome="Wild Terra 2: New Lands">
+                <div class="game" data-nome="WildTerra2">
                     <img src="imagens/wild terra 2.jpg" alt="Wild Terra 2: New Lands" onclick="mostrarNomeJogo(this)" onmouseover="animacaoMouseOver(this)" onmouseout="animacaoMouseOut(this)">
                 </div>
             </section>
@@ -66,24 +66,8 @@
             <a href="#" class="page-link" onclick="showPage(2)">2</a>
         </nav>
     </main>
-    <footer>
-        <footer>
-            <p>&copy; 2023 Carlus Electum. Todos os direitos reservados.</p>
-            <div class="social-icons">
-                <a href="https://www.facebook.com/ArrozEstudios/?locale=pt_BR" target="_blank">Facebook</a>
-                <a href="https://twitter.com/ItsMuxyre" target="_blank">Twitter</a>
-                <a href="https://www.instagram.com/itsmuxyre/" target="_blank">Instagram</a>
-            </div>
-            </div>
-        </footer>
-    </footer>
     <script>
-          function mostrarNomeJogo(elemento) {
-        var nomeJogo = elemento.parentNode.getAttribute('data-nome');
-        alert("Nome do Jogo: " + nomeJogo);
-    }
-
-    function animacaoMouseOver(elemento) {
+        function animacaoMouseOver(elemento) {
         elemento.style.transform = 'scale(1.1)';
     }
 
@@ -107,6 +91,12 @@
             });
             pageLinks[pageNumber - 1].classList.add('active');
         }
+        function mostrarNomeJogo(elemento) {
+            // Obtém o valor do atributo 'data-nome'
+            var nomeDoJogo = elemento.parentNode.getAttribute('data-nome');
+
+            // Redireciona para a página do jogo com base no nome
+            window.location.href = nomeDoJogo.toLowerCase().replace(/\s/g, '-') + ".html";}
         showPage(1);
     </script>
 </body>
